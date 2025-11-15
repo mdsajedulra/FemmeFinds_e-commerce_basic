@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    fetch("/components/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+        });
+</script>
+
+<body>
+    <div id="navbar"></div>
+    <section id="register" class="flex justify-center items-center py-20 px-4 bg-pink-50">
+        <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+            <h2 class="text-2xl font-bold text-center text-pink-600 mb-6">Register</h2>
+            <form>
+                <label class="block mb-3">
+                    <span class="font-medium">Full Name</span>
+                    <input type="text" class="w-full mt-1 p-3 border rounded focus:ring-2 focus:ring-pink-400" />
+                </label>
+                <label class="block mb-3">
+                    <span class="font-medium">Email</span>
+                    <input type="email" class="w-full mt-1 p-3 border rounded focus:ring-2 focus:ring-pink-400" />
+                </label>
+                <label class="block mb-3">
+                    <span class="font-medium">Password</span>
+                    <input type="password" class="w-full mt-1 p-3 border rounded focus:ring-2 focus:ring-pink-400" />
+                </label>
+                <label class="block mb-4">
+                    <span class="font-medium">Select Role</span>
+                    <select class="w-full mt-1 p-3 border rounded focus:ring-2 focus:ring-pink-400">
+                        <option>Buyer</option>
+                        <option>Seller</option>
+                    </select>
+                </label>
+                <button class="w-full bg-pink-600 text-white py-3 rounded-lg hover:bg-pink-700">Register</button>
+            </form>
+            <p class="text-center mt-4 text-sm">Already have an account? <a href="#login"
+                    class="text-pink-600 font-medium">Login</a></p>
+        </div>
+    </section>
+</body>
+
+</html>
